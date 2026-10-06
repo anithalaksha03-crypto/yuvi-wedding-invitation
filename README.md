@@ -1,6 +1,6 @@
-# YUVI Studio Wedding E-Invitation Creator
+# YUVI Studio Wedding E-Invitation Creator — Reference Upgrade
 
-Next.js + React + TypeScript starter for a mobile-first cinematic wedding invitation creator.
+This version is a mobile-first interactive wedding invitation builder inspired by the supplied reference video: emerald/green + gold luxury styling, arch hero, couple section, wedding details, invitation card, memories gallery, travel/help section, final save-the-date screen, and optional background music.
 
 ## Run locally
 
@@ -13,19 +13,22 @@ Open http://localhost:3000
 
 ## Deploy to Vercel
 
-Push this folder to GitHub, import the repository into Vercel, and deploy. Vercel detects Next.js automatically.
+Push the project to the existing GitHub repository and Vercel will redeploy automatically.
 
-## MP4 rendering
+## What is included
 
-The included UI is ready for the invitation workflow and live preview. For production MP4 generation, connect the scene data to a Remotion composition and render it with a compatible server/rendering setup. The package already includes Remotion and @remotion/player so the project can be extended without changing the UI architecture.
+- Couple names and photos
+- Couple photo and invitation card
+- Wedding date, time, venue and reception
+- Family line and custom message
+- 3 themes: Emerald, Royal, Blush
+- Background music upload and play/pause
+- Up to 12 gallery photos
+- Full-screen invitation preview
+- Google Maps location link
+- Airport / train / explore cards
+- Responsive 9:16 mobile-first invitation
 
-## Next production upgrades
-- 8-scene timeline
-- Music upload and audio sync
-- Remotion MP4 rendering endpoint
-- Tamil fonts
-- Royal Gold / Pastel Floral / Maroon themes
-- Couple photo scene
-- Invitation card scene
-- Shareable invitation URL
-- Cloud storage
+## Important
+
+This build is the interactive/shareable invitation layer. Actual server-side MP4 rendering should be added as a separate Remotion rendering service after the design is approved. Vercel can host the UI, while the render worker can generate MP4 files without putting heavy video rendering work into a normal Vercel request.
