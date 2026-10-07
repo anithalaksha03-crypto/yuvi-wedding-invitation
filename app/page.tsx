@@ -426,6 +426,7 @@ function Invitation({
         full ? 'full' : ''
       }`}
     >
+      <style>{openingGlowStyle}</style>
     {/* SCENE 1 — GRAND OPENING */}
 <section
   className="inviteSection grandOpening"
