@@ -427,68 +427,105 @@ function Invitation({
       }`}
     >
       {/* SCENE 1 — GRAND OPENING */}
-      <section className="inviteSection hero">
-        <div className="floral" />
+<section className="inviteSection hero grandOpening">
+  <div className="floral" />
 
-        <div className="heroInner">
-          <div className="eyebrow">
-            YUVI STUDIO
-          </div>
+  <div className="heroInner">
 
-          <div className="goldLine" />
+    <div className="eyebrow">
+      YUVI STUDIO
+    </div>
 
-          <div className="eyebrow">
-            PRESENTS
-          </div>
+    <div className="goldLine" />
 
-          <h1>
-            A Beautiful
-            <br />
-            Beginning
-          </h1>
+    <div className="eyebrow">
+      PRESENTS
+    </div>
 
-          {mainPhoto ? (
-            <div className="heroPhoto">
-              <img
-                src={mainPhoto}
-                alt="Couple"
-              />
-            </div>
-          ) : (
-            <div
-              className="heroPhoto"
-              style={{
-                display: 'grid',
-                placeItems: 'center',
-                background:
-                  'linear-gradient(145deg,#15382d,#07100d)',
-              }}
-            >
-              <span
-                style={{
-                  color: '#e7c76d',
-                  fontFamily:
-                    'Cormorant Garamond, serif',
-                  fontSize: 24,
-                }}
-              >
-                Your Couple Photo
-              </span>
-            </div>
-          )}
+    <div
+      style={{
+        marginTop: 34,
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 12,
+        letterSpacing: '.35em',
+      }}
+    >
+      A CELEBRATION OF LOVE
+    </div>
 
-          <div className="names">
-            {data.groom}
-            <span className="amp"> & </span>
-            {data.bride}
-          </div>
+    <h1
+      style={{
+        margin: '18px 0 0',
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 52,
+        lineHeight: 1.02,
+        fontWeight: 400,
+        letterSpacing: '.02em',
+      }}
+    >
+      A Beautiful
+      <br />
+      Beginning
+    </h1>
 
-          <div className="dateLine">
-            {data.date}
-          </div>
-        </div>
-      </section>
+    <div
+      style={{
+        width: 90,
+        height: 1,
+        background: '#d8af45',
+        margin: '30px auto',
+      }}
+    />
 
+    <div
+      style={{
+        color: '#f7e5a5',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 30,
+        lineHeight: 1.2,
+      }}
+    >
+      {data.groom}
+    </div>
+
+    <div
+      style={{
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 24,
+        fontStyle: 'italic',
+        margin: '7px 0',
+      }}
+    >
+      &
+    </div>
+
+    <div
+      style={{
+        color: '#f7e5a5',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 30,
+        lineHeight: 1.2,
+      }}
+    >
+      {data.bride}
+    </div>
+
+    <div
+      style={{
+        marginTop: 28,
+        color: '#a9a08c',
+        fontSize: 11,
+        letterSpacing: '.18em',
+      }}
+    >
+      {data.date}
+    </div>
+
+  </div>
+</section>
       {/* SCENE 2 — WELCOME */}
       <section className="inviteSection welcome">
         <div className="eyebrow">
