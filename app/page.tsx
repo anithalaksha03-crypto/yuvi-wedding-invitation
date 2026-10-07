@@ -1108,11 +1108,23 @@ function Invitation({
 
           <div className="yuviGoldLine" />
 
-          <h2 className="yuviTitle">
-            Forever
-            <br />
-            Begins Here
-          </h2>
+         <h2 className="yuviTitle">
+  Forever
+  <br />
+  Begins Here
+  <span
+    style={{
+      display: 'block',
+      fontSize: 12,
+      letterSpacing: '3px',
+      marginTop: 14,
+      color: '#f4db8b',
+      opacity: 0.85,
+    }}
+  >
+    SAVE THE DATE
+  </span>
+</h2>
 
           <div
             style={{
@@ -1125,13 +1137,18 @@ function Invitation({
               {data.groom}
             </div>
 
-            <div className="yuviAmp">&</div>
-
-            <div className="yuviName">
-              {data.bride}
-            </div>
-          </div>
-
+           <div
+  style={{
+    marginTop: 18,
+    fontFamily: 'Cormorant Garamond, Georgia, serif',
+    fontSize: 26,
+    letterSpacing: '2px',
+    color: '#f4db8b',
+    fontWeight: 600,
+  }}
+>
+  {data.date}
+</div>
           <div
             style={{
               position: 'relative',
