@@ -834,35 +834,137 @@ function Invitation({
   </section>
 )}
 
-      {/* SCENE 5 — MEMORIES */}
-      <section className="inviteSection gallery">
-        <div className="eyebrow">
-          OUR MEMORIES
+     {/* SCENE 5 — CINEMATIC MEMORIES */}
+<section
+  className="inviteSection gallery"
+  style={{
+    textAlign: 'center',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  }}
+>
+  <style>{`
+    @keyframes memoryCinematic {
+      0% {
+        opacity: 0;
+        transform: scale(1.08);
+      }
+      12% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(.96);
+      }
+    }
+
+    .memoryCinematicFrame {
+      animation: memoryCinematic 8s ease-in-out infinite;
+    }
+  `}</style>
+
+  <div className="eyebrow">
+    OUR MEMORIES
+  </div>
+
+  <div className="goldLine" />
+
+  <h3
+    style={{
+      marginTop: 22,
+      color: '#f4db8b',
+      fontFamily: 'Cormorant Garamond, serif',
+      fontSize: 38,
+      fontWeight: 400,
+      lineHeight: 1.05,
+    }}
+  >
+    Moments
+    <br />
+    We Treasure
+  </h3>
+
+  <p
+    style={{
+      marginTop: 16,
+      color: '#a9a08c',
+      fontSize: 12,
+      lineHeight: 1.6,
+    }}
+  >
+    Every picture holds a beautiful memory.
+  </p>
+
+  {data.gallery.length > 0 ? (
+    <div
+      style={{
+        marginTop: 28,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 18,
+        alignItems: 'center',
+      }}
+    >
+      {data.gallery.map((src, index) => (
+        <div
+          key={index}
+          className="memoryCinematicFrame"
+          style={{
+            width: '88%',
+            maxWidth: 360,
+            overflow: 'hidden',
+            borderRadius: 18,
+            border: '1px solid rgba(216,175,69,.35)',
+            boxShadow: '0 20px 60px rgba(0,0,0,.4)',
+            animationDelay: `${index * 1.2}s`,
+          }}
+        >
+          <img
+            src={src}
+            alt={`Memory ${index + 1}`}
+            style={{
+              display: 'block',
+              width: '100%',
+              height: 360,
+              objectFit: 'cover',
+            }}
+          />
         </div>
+      ))}
+    </div>
+  ) : (
+    <div
+      style={{
+        marginTop: 30,
+        color: '#8f8775',
+        fontSize: 12,
+        letterSpacing: '.08em',
+      }}
+    >
+      YOUR BEAUTIFUL MEMORIES
+      <br />
+      WILL APPEAR HERE
+    </div>
+  )}
 
-        <h3>
-          Moments
-          <br />
-          We Treasure
-        </h3>
-
-        {data.gallery.length > 0 ? (
-          <div className="galleryGrid">
-            {data.gallery.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`Memory ${index + 1}`}
-              />
-            ))}
-          </div>
-        ) : (
-          <p>
-            Your beautiful memories will appear here.
-          </p>
-        )}
-      </section>
-
+  <div
+    style={{
+      marginTop: 28,
+      color: '#d8af45',
+      fontFamily: 'Cormorant Garamond, serif',
+      fontSize: 18,
+      fontStyle: 'italic',
+    }}
+  >
+    Moments that last forever.
+  </div>
+</section>
       {/* SCENE 6 — TRAVEL / VENUE */}
       <section className="inviteSection travel">
         <div className="eyebrow">
