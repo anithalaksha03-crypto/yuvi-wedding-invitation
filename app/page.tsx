@@ -437,22 +437,41 @@ function Invitation({
     background: '#061c19',
   }}
 >
-  <video
-    autoPlay
-    muted
-    playsInline
-    preload="auto"
+ <div
+  style={{
+    position: 'absolute',
+    inset: 0,
+    background:
+      'radial-gradient(circle at center, rgba(212,175,55,.18), transparent 38%), linear-gradient(135deg, #061c19, #0b2b25, #041512)',
+    overflow: 'hidden',
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      width: '280px',
+      height: '280px',
+      borderRadius: '50%',
+      background: 'rgba(212,175,55,.12)',
+      filter: 'blur(55px)',
+      top: '25%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      animation: 'openingGlow 4s ease-in-out infinite',
+    }}
+  />
+
+  <div
     style={{
       position: 'absolute',
       inset: 0,
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      objectPosition: 'center',
+      background:
+        'radial-gradient(circle at 20% 30%, rgba(255,215,120,.22) 0 1px, transparent 2px), radial-gradient(circle at 75% 65%, rgba(255,215,120,.18) 0 1px, transparent 2px)',
+      backgroundSize: '120px 120px, 160px 160px',
+      opacity: .7,
     }}
-  >
-   <source src="" type="video/mp4" />
-  </video>
+  />
+</div>
 
   <div
     style={{
