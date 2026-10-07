@@ -506,55 +506,97 @@ function Invitation({
         <p>{data.message}</p>
       </section>
 
-      {/* SCENE 3 — WEDDING */}
-      <section className="inviteSection eventCard">
-        <div className="eyebrow">
-          SAVE THE DATE
-        </div>
+     {/* SCENE 3 — RECEPTION — MAIN EVENT */}
+<section className="inviteSection eventCard receptionHero">
+  <div className="eyebrow">
+    YOU ARE CORDIALLY INVITED
+  </div>
 
-        <h3>
-          The Wedding
-        </h3>
+  <h3>
+    Reception
+  </h3>
 
-        <div className="cardFrame">
-          <div className="eyebrow">
-            WEDDING CEREMONY
-          </div>
+  <div className="cardFrame">
+    <div className="eyebrow">
+      CELEBRATION OF LOVE
+    </div>
 
-          <div
-            style={{
-              margin: '20px 0',
-              color: '#f4db8b',
-              fontFamily:
-                'Cormorant Garamond, serif',
-              fontSize: 30,
-            }}
-          >
-            {data.date}
-          </div>
+    <div
+      style={{
+        margin: '18px 0 8px',
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 38,
+        lineHeight: 1,
+      }}
+    >
+      {data.groom}
+    </div>
 
-          <div className="eventDetails">
-            <div>✦ {data.time}</div>
-            <div>✦ {data.venue}</div>
-          </div>
+    <div
+      style={{
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 24,
+        fontStyle: 'italic',
+      }}
+    >
+      &
+    </div>
 
-          {data.reception && (
-            <div
-              style={{
-                marginTop: 22,
-                paddingTop: 18,
-                borderTop:
-                  '1px solid rgba(231,199,109,.18)',
-                color: '#cfc3a5',
-                lineHeight: 1.6,
-              }}
-            >
-              {data.reception}
-            </div>
-          )}
-        </div>
-      </section>
+    <div
+      style={{
+        margin: '8px 0 22px',
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 38,
+        lineHeight: 1,
+      }}
+    >
+      {data.bride}
+    </div>
 
+    <div className="goldLine" />
+
+    <div
+      style={{
+        marginTop: 20,
+        color: '#f7e5a5',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 30,
+      }}
+    >
+      {data.reception || 'Reception Details'}
+    </div>
+
+    <div
+      style={{
+        marginTop: 18,
+        color: '#c9c0a9',
+        fontSize: 13,
+        lineHeight: 1.7,
+      }}
+    >
+      We warmly invite you to join us
+      <br />
+      and celebrate this beautiful evening.
+    </div>
+  </div>
+
+  <div
+    style={{
+      marginTop: 24,
+      color: '#9f967f',
+      fontSize: 11,
+      letterSpacing: '.08em',
+      textAlign: 'center',
+    }}
+  >
+    WEDDING CEREMONY • {data.date} • {data.time}
+    <br />
+    {data.venue}
+  </div>
+</section>
       {/* SCENE 4 — INVITATION CARD */}
       {data.card && (
         <section className="inviteSection eventCard">
