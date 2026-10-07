@@ -1153,18 +1153,39 @@ function Invitation({
 
           <div className="yuviGoldLine" />
 
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 20,
-              color: '#d8af45',
-              fontSize: 10,
-              letterSpacing: '.3em',
-            }}
-          >
-            YUVI STUDIO
-          </div>
+         <div
+  style={{
+    textAlign: 'center',
+    padding: '25px 20px 10px',
+    color: '#f4db8b',
+    letterSpacing: '1.5px',
+  }}
+>
+  <div style={{ fontSize: 12, opacity: 0.8 }}>
+    ✨ Crafted with Love by
+  </div>
+
+  <div
+    style={{
+      fontSize: 22,
+      fontWeight: 700,
+      marginTop: 8,
+      letterSpacing: '3px',
+    }}
+  >
+    YUVI STUDIO
+  </div>
+
+  <div
+    style={{
+      fontSize: 10,
+      opacity: 0.65,
+      marginTop: 6,
+    }}
+  >
+    Wedding • Baby • Events
+  </div>
+</div>
         </section>
 
       </div>
