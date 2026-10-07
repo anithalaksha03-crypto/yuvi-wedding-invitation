@@ -427,55 +427,192 @@ function Invitation({
       }`}
     >
       {/* SCENE 1 — GRAND OPENING */}
-<section className="inviteSection hero grandOpening">
-  <div className="floral" />
+<section
+  className="inviteSection hero grandOpening"
+  style={{
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+  }}
+>
+  <style>{`
+    @keyframes openingGlow {
+      0% {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      25% {
+        opacity: 1;
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.04);
+      }
+    }
 
-  <div className="heroInner">
+    @keyframes openingText {
+      0% {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
 
-    <div className="eyebrow">
+    @keyframes goldShine {
+      0% {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      70% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.08);
+      }
+    }
+
+    .openingGlow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(244,219,139,.20) 0%,
+        rgba(244,219,139,.08) 35%,
+        transparent 70%
+      );
+      animation: openingGlow 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .openingFrame {
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(244,219,139,.22);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .openingContent {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 40px 24px;
+      animation: openingText 5s ease-in-out infinite;
+    }
+
+    .openingGoldLine {
+      width: 90px;
+      height: 1px;
+      margin: 22px auto;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d8af45,
+        #f4db8b,
+        #d8af45,
+        transparent
+      );
+      overflow: hidden;
+      position: relative;
+    }
+
+    .openingGoldLine::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,.7);
+      transform: translateX(-120%);
+      animation: goldShine 3s ease-in-out infinite;
+    }
+  `}</style>
+
+  <div className="openingGlow" />
+
+  <div className="openingFrame" />
+
+  <div className="openingContent">
+
+    <div
+      className="eyebrow"
+      style={{
+        color: '#f4db8b',
+        letterSpacing: '.32em',
+        fontSize: 11,
+      }}
+    >
       YUVI STUDIO
     </div>
 
-    <div className="goldLine" />
+    <div className="openingGoldLine" />
 
-    <div className="eyebrow">
+    <div
+      style={{
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 12,
+        letterSpacing: '.28em',
+        marginTop: 8,
+      }}
+    >
       PRESENTS
     </div>
 
     <div
       style={{
-        marginTop: 34,
-        color: '#d8af45',
-        fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 12,
-        letterSpacing: '.35em',
-      }}
-    >
-      A CELEBRATION OF LOVE
-    </div>
-
-    <h1
-      style={{
-        margin: '18px 0 0',
+        marginTop: 38,
         color: '#f4db8b',
         fontFamily: 'Cormorant Garamond, serif',
         fontSize: 52,
         lineHeight: 1.02,
         fontWeight: 400,
         letterSpacing: '.02em',
+        textShadow: '0 0 28px rgba(244,219,139,.16)',
       }}
     >
       A Beautiful
       <br />
       Beginning
-    </h1>
+    </div>
 
     <div
       style={{
-        width: 90,
+        width: 70,
         height: 1,
         background: '#d8af45',
-        margin: '30px auto',
+        margin: '28px auto',
       }}
     />
 
@@ -494,9 +631,9 @@ function Invitation({
       style={{
         color: '#d8af45',
         fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 24,
+        fontSize: 22,
         fontStyle: 'italic',
-        margin: '7px 0',
+        margin: '6px 0',
       }}
     >
       &
