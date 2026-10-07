@@ -526,22 +526,136 @@ function Invitation({
 
   </div>
 </section>
-      {/* SCENE 2 — WELCOME */}
-      <section className="inviteSection welcome">
-        <div className="eyebrow">
-          {data.family}
-        </div>
+     {/* SCENE 2 — COUPLE INTRODUCTION */}
+<section className="inviteSection welcome coupleIntro">
 
-        <div className="goldLine" />
+  <div className="eyebrow">
+    TOGETHER WITH THEIR FAMILIES
+  </div>
 
-        <h3>
-          Two Hearts,
-          <br />
-          One Beautiful Journey
-        </h3>
+  <div className="goldLine" />
 
-        <p>{data.message}</p>
-      </section>
+  <h3>
+    Two Hearts,
+    <br />
+    One Beautiful Journey
+  </h3>
+
+  <div
+    style={{
+      marginTop: 28,
+      color: '#a9a08c',
+      fontSize: 12,
+      letterSpacing: '.12em',
+    }}
+  >
+    WITH LOVE & JOY
+  </div>
+
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 18,
+      marginTop: 30,
+    }}
+  >
+
+    {data.groomPhoto ? (
+      <div className="heroPhoto">
+        <img
+          src={data.groomPhoto}
+          alt={data.groom}
+        />
+      </div>
+    ) : (
+      <div
+        style={{
+          width: 150,
+          height: 190,
+          border: '1px solid rgba(216,175,69,.45)',
+          borderRadius: '80px 80px 20px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#8f8775',
+          fontSize: 11,
+          letterSpacing: '.08em',
+        }}
+      >
+        GROOM PHOTO
+      </div>
+    )}
+
+    <div
+      style={{
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 32,
+        lineHeight: 1,
+      }}
+    >
+      {data.groom}
+    </div>
+
+    <div
+      style={{
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 26,
+        fontStyle: 'italic',
+      }}
+    >
+      &
+    </div>
+
+    {data.bridePhoto ? (
+      <div className="heroPhoto">
+        <img
+          src={data.bridePhoto}
+          alt={data.bride}
+        />
+      </div>
+    ) : (
+      <div
+        style={{
+          width: 150,
+          height: 190,
+          border: '1px solid rgba(216,175,69,.45)',
+          borderRadius: '80px 80px 20px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#8f8775',
+          fontSize: 11,
+          letterSpacing: '.08em',
+        }}
+      >
+        BRIDE PHOTO
+      </div>
+    )}
+
+    <div
+      style={{
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 32,
+        lineHeight: 1,
+      }}
+    >
+      {data.bride}
+    </div>
+
+  </div>
+
+  <div className="goldLine" />
+
+  <p>
+    {data.message}
+  </p>
+
+</section> 
 
      {/* SCENE 3 — RECEPTION — MAIN EVENT */}
 <section className="inviteSection eventCard receptionHero">
