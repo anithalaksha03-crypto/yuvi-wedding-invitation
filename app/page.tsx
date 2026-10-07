@@ -426,241 +426,67 @@ function Invitation({
         full ? 'full' : ''
       }`}
     >
-      {/* SCENE 1 — GRAND OPENING */}
+    {/* SCENE 1 — GRAND OPENING */}
 <section
-  className="inviteSection hero grandOpening"
+  className="inviteSection grandOpening"
   style={{
     minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
+    padding: 0,
     position: 'relative',
     overflow: 'hidden',
+    background: '#061c19',
   }}
 >
-  <style>{`
-    @keyframes openingGlow {
-      0% {
-        opacity: 0;
-        transform: scale(0.96);
-      }
-      25% {
-        opacity: 1;
-      }
-      70% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1.04);
-      }
-    }
+  <video
+    autoPlay
+    muted
+    playsInline
+    preload="auto"
+    style={{
+      position: 'absolute',
+      inset: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      objectPosition: 'center',
+    }}
+  >
+    <source src="/yuvi-peacock-opening.mp4" type="video/mp4" />
+  </video>
 
-    @keyframes openingText {
-      0% {
-        opacity: 0;
-        transform: translateY(22px);
-      }
-      20% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      75% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-    }
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background:
+        'linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.28), rgba(0,0,0,.45))',
+      pointerEvents: 'none',
+    }}
+  />
 
-    @keyframes goldShine {
-      0% {
-        transform: translateX(-120%);
-        opacity: 0;
-      }
-      30% {
-        opacity: 1;
-      }
-      70% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(120%);
-        opacity: 0;
-      }
-    }
-
-    @keyframes slowZoom {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1.08);
-      }
-    }
-
-    .openingGlow {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(244,219,139,.20) 0%,
-        rgba(244,219,139,.08) 35%,
-        transparent 70%
-      );
-      animation: openingGlow 5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .openingFrame {
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(244,219,139,.22);
-      border-radius: 24px;
-      pointer-events: none;
-    }
-
-    .openingContent {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 40px 24px;
-      animation: openingText 5s ease-in-out infinite;
-    }
-
-    .openingGoldLine {
-      width: 90px;
-      height: 1px;
-      margin: 22px auto;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d8af45,
-        #f4db8b,
-        #d8af45,
-        transparent
-      );
-      overflow: hidden;
-      position: relative;
-    }
-
-    .openingGoldLine::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,.7);
-      transform: translateX(-120%);
-      animation: goldShine 3s ease-in-out infinite;
-    }
-  `}</style>
-
-  <div className="openingGlow" />
-
-  <div className="openingFrame" />
-
-  <div className="openingContent">
-
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      pointerEvents: 'none',
+    }}
+  >
     <div
-      className="eyebrow"
       style={{
         color: '#f4db8b',
-        letterSpacing: '.32em',
-        fontSize: 11,
-      }}
-    >
-      YUVI STUDIO
-    </div>
-
-    <div className="openingGoldLine" />
-
-    <div
-      style={{
-        color: '#d8af45',
         fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 12,
-        letterSpacing: '.28em',
-        marginTop: 8,
+        fontSize: 13,
+        letterSpacing: '.35em',
+        textTransform: 'uppercase',
+        textShadow: '0 2px 18px rgba(0,0,0,.8)',
       }}
     >
-      PRESENTS
+      YUVI STUDIO PRESENTS
     </div>
-
-    <div
-      style={{
-        marginTop: 38,
-        color: '#f4db8b',
-        fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 52,
-        lineHeight: 1.02,
-        fontWeight: 400,
-        letterSpacing: '.02em',
-        textShadow: '0 0 28px rgba(244,219,139,.16)',
-      }}
-    >
-      A Beautiful
-      <br />
-      Beginning
-    </div>
-
-    <div
-      style={{
-        width: 70,
-        height: 1,
-        background: '#d8af45',
-        margin: '28px auto',
-      }}
-    />
-
-    <div
-      style={{
-        color: '#f7e5a5',
-        fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 30,
-        lineHeight: 1.2,
-      }}
-    >
-      {data.groom}
-    </div>
-
-    <div
-      style={{
-        color: '#d8af45',
-        fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 22,
-        fontStyle: 'italic',
-        margin: '6px 0',
-      }}
-    >
-      &
-    </div>
-
-    <div
-      style={{
-        color: '#f7e5a5',
-        fontFamily: 'Cormorant Garamond, serif',
-        fontSize: 30,
-        lineHeight: 1.2,
-      }}
-    >
-      {data.bride}
-    </div>
-
-    <div
-      style={{
-        marginTop: 28,
-        color: '#a9a08c',
-        fontSize: 11,
-        letterSpacing: '.18em',
-      }}
-    >
-      {data.date}
-    </div>
-
   </div>
 </section>
      {/* SCENE 2 — COUPLE INTRODUCTION */}
