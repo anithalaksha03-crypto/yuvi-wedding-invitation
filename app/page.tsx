@@ -748,27 +748,91 @@ function Invitation({
     {data.venue}
   </div>
 </section>
-      {/* SCENE 4 — INVITATION CARD */}
-      {data.card && (
-        <section className="inviteSection eventCard">
-          <div className="eyebrow">
-            THE INVITATION
-          </div>
+      {/* SCENE 4 — INVITATION CARD REVEAL */}
+{data.card && (
+  <section
+    className="inviteSection eventCard"
+    style={{
+      textAlign: 'center',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+  >
 
-          <h3>
-            With Love,
-            <br />
-            We Invite You
-          </h3>
+    <div className="eyebrow">
+      THE INVITATION
+    </div>
 
-          <div className="cardFrame">
-            <img
-              src={data.card}
-              alt="Wedding invitation"
-            />
-          </div>
-        </section>
-      )}
+    <div className="goldLine" />
+
+    <h3
+      style={{
+        marginTop: 24,
+        color: '#f4db8b',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 34,
+        fontWeight: 400,
+        lineHeight: 1.15,
+      }}
+    >
+      With Love,
+      <br />
+      We Invite You
+    </h3>
+
+    <div
+      style={{
+        marginTop: 28,
+        color: '#a9a08c',
+        fontSize: 11,
+        letterSpacing: '.14em',
+      }}
+    >
+      PLEASE JOIN US
+    </div>
+
+    <div
+      className="cardFrame"
+      style={{
+        marginTop: 26,
+        padding: 14,
+        maxWidth: '88%',
+        background: 'rgba(255,255,255,.035)',
+        border: '1px solid rgba(216,175,69,.35)',
+        boxShadow: '0 20px 60px rgba(0,0,0,.35)',
+      }}
+    >
+      <img
+        src={data.card}
+        alt="Wedding invitation"
+        style={{
+          display: 'block',
+          width: '100%',
+          maxHeight: '62vh',
+          objectFit: 'contain',
+        }}
+      />
+    </div>
+
+    <div
+      style={{
+        marginTop: 22,
+        color: '#d8af45',
+        fontFamily: 'Cormorant Garamond, serif',
+        fontSize: 18,
+        fontStyle: 'italic',
+      }}
+    >
+      A day to remember,
+      <br />
+      a moment to cherish.
+    </div>
+
+  </section>
+)}
 
       {/* SCENE 5 — MEMORIES */}
       <section className="inviteSection gallery">
