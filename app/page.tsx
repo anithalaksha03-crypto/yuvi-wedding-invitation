@@ -451,7 +451,7 @@ function Invitation({
       objectPosition: 'center',
     }}
   >
-    <source src="/yuvi-peacock-opening.mp4" type="video/mp4" />
+   <source src="" type="video/mp4" />
   </video>
 
   <div
