@@ -415,43 +415,6 @@ function Invitation({
   themeClass: string;
   full?: boolean;
 }) {
-  const [isMusicOn, setIsMusicOn] = useState(true);
-
-useEffect(() => {
-  const audio = document.getElementById(
-    'yuviWeddingMusic'
-  ) as HTMLAudioElement | null;
-
-  if (!audio || !data.music) return;
-
-  audio.volume = 0.35;
-
-  const playMusic = () => {
-    audio.play().catch(() => {});
-  };
-
-  playMusic();
-
-  window.addEventListener('click', playMusic, { once: true });
-
-  return () => {
-    window.removeEventListener('click', playMusic);
-  };
-}, [data.music]);
-
-useEffect(() => {
-  const audio = document.getElementById(
-    'yuviWeddingMusic'
-  ) as HTMLAudioElement | null;
-
-  if (!audio) return;
-
-  if (isMusicOn) {
-    audio.play().catch(() => {});
-  } else {
-    audio.pause();
-  }
-}, [isMusicOn]);
   return (
     <div
       className={`inviteShell ${themeClass} ${full ? 'full' : ''}`}
@@ -781,39 +744,7 @@ useEffect(() => {
           }
         }
       `}</style>
-{data.music && (
-  <audio
-    id="yuviWeddingMusic"
-    src={data.music}
-    loop
-    preload="auto"
-  />
-)}
 
-{data.music && (
-  <button
-    onClick={() => setIsMusicOn((v) => !v)}
-    style={{
-      position: 'fixed',
-      right: 18,
-      bottom: 18,
-      zIndex: 9999,
-      width: 46,
-      height: 46,
-      borderRadius: '50%',
-      border: '1px solid rgba(244,219,139,.55)',
-      background: 'rgba(3,19,16,.82)',
-      color: '#f4db8b',
-      backdropFilter: 'blur(10px)',
-      fontSize: 17,
-      cursor: 'pointer',
-      boxShadow: '0 8px 30px rgba(0,0,0,.45)',
-    }}
-    aria-label={isMusicOn ? 'Mute music' : 'Play music'}
-  >
-    {isMusicOn ? '♫' : '♪'}
-  </button>
-)}
       <div className="yuviCinematic">
 
         {/* SCENE 1 — GRAND OPENING */}
