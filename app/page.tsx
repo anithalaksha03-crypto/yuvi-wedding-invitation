@@ -426,7 +426,18 @@ function Invitation({
         full ? 'full' : ''
       }`}
     >
-      <style>{openingGlowStyle}</style>
+     <style>{`
+@keyframes openingGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.9;
+  }
+}
+`}</style>
     {/* SCENE 1 — GRAND OPENING */}
 <section
   className="inviteSection grandOpening"
