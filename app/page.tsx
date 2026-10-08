@@ -327,7 +327,7 @@ export default function Home() {
               aria-label="Close"
             >
               ×
-           <button
+                      </button>
   type="button"
   onClick={() => setMusicOn((value) => !value)}
   style={{
