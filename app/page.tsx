@@ -981,7 +981,17 @@ function Invitation({
           </div>
 
           <div className="yuviGoldLine" />
-
+<div
+  style={{
+    fontSize: 9,
+    letterSpacing: '3px',
+    color: '#f4db8b',
+    opacity: 0.75,
+    marginBottom: 8,
+  }}
+>
+  A DAY TO REMEMBER
+</div>
           <h2 className="yuviTitle">
             The Sacred
             <br />
