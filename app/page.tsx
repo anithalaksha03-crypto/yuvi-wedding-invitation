@@ -398,7 +398,7 @@ function Invitation({
     <div
       className={`inviteShell ${themeClass} ${full ? 'full' : ''}`}
       style={{
-        background: '#061c19',
+        background: '#041713',
         color: '#f4db8b',
         overflow: 'hidden',
       }}
@@ -407,6 +407,9 @@ function Invitation({
         .yuviCinematic {
           scroll-behavior: smooth;
           scroll-snap-type: y mandatory;
+          background:
+            radial-gradient(circle at 50% 20%, rgba(214,177,72,.08), transparent 28%),
+            #041713;
         }
 
         .yuviScene {
@@ -419,10 +422,10 @@ function Invitation({
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 50px 24px;
+          padding: 48px 22px;
           box-sizing: border-box;
           background:
-            radial-gradient(circle at 50% 35%, rgba(212,175,55,.12), transparent 32%),
+            radial-gradient(circle at 50% 35%, rgba(214,177,72,.12), transparent 32%),
             linear-gradient(145deg,#061c19,#0a2923 48%,#031310);
         }
 
@@ -432,23 +435,23 @@ function Invitation({
           inset: 0;
           pointer-events: none;
           background:
-            radial-gradient(circle at 15% 20%, rgba(255,215,120,.16) 0 1px, transparent 2px),
-            radial-gradient(circle at 82% 30%, rgba(255,215,120,.13) 0 1px, transparent 2px),
-            radial-gradient(circle at 28% 78%, rgba(255,215,120,.12) 0 1px, transparent 2px),
-            radial-gradient(circle at 72% 82%, rgba(255,215,120,.15) 0 1px, transparent 2px);
-          background-size: 150px 150px, 190px 190px, 170px 170px, 210px 210px;
-          opacity: .75;
+            radial-gradient(circle at 12% 18%, rgba(255,215,120,.18) 0 1px, transparent 2px),
+            radial-gradient(circle at 84% 26%, rgba(255,215,120,.14) 0 1px, transparent 2px),
+            radial-gradient(circle at 22% 82%, rgba(255,215,120,.12) 0 1px, transparent 2px),
+            radial-gradient(circle at 78% 76%, rgba(255,215,120,.16) 0 1px, transparent 2px);
+          background-size: 145px 145px, 180px 180px, 165px 165px, 205px 205px;
+          opacity: .8;
         }
 
         .yuviGlow {
           position: absolute;
-          width: 320px;
-          height: 320px;
+          width: 300px;
+          height: 300px;
           border-radius: 50%;
-          background: rgba(212,175,55,.14);
-          filter: blur(65px);
+          background: rgba(214,177,72,.14);
+          filter: blur(70px);
           left: 50%;
-          top: 38%;
+          top: 40%;
           transform: translate(-50%,-50%);
           animation: yuviGlow 5s ease-in-out infinite;
           pointer-events: none;
@@ -457,99 +460,68 @@ function Invitation({
         .yuviSweep {
           position: absolute;
           top: -20%;
-          left: -45%;
-          width: 38%;
+          left: -50%;
+          width: 36%;
           height: 140%;
           transform: skewX(-18deg);
-          background:
-            linear-gradient(
-              90deg,
-              transparent,
-              rgba(255,215,120,.05),
-              rgba(255,240,190,.35),
-              rgba(255,215,120,.08),
-              transparent
-            );
-          animation: yuviSweep 6s ease-in-out infinite;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,215,120,.05),
+            rgba(255,240,190,.32),
+            rgba(255,215,120,.06),
+            transparent
+          );
+          animation: yuviSweep 7s ease-in-out infinite;
           pointer-events: none;
         }
 
-        .yuviFade {
-          animation: yuviFade 1.8s ease both;
-        }
-
-        .yuviZoom {
-          animation: yuviZoom 7s ease-in-out infinite;
-        }
-
-        .yuviPhoto {
-          width: min(78vw, 330px);
-          height: min(55vh, 390px);
-          object-fit: cover;
-          border: 1px solid rgba(244,219,139,.55);
-          border-radius: 160px 160px 24px 24px;
-          box-shadow:
-            0 0 0 8px rgba(212,175,55,.035),
-            0 25px 70px rgba(0,0,0,.55);
-          display: block;
-        }
-
-        .yuviSmallPhoto {
-          width: 125px;
-          height: 155px;
-          object-fit: cover;
-          border-radius: 75px 75px 18px 18px;
-          border: 1px solid rgba(244,219,139,.5);
-          box-shadow: 0 18px 45px rgba(0,0,0,.45);
+        .yuviContent {
+          position: relative;
+          z-index: 2;
+          width: min(92vw, 520px);
         }
 
         .yuviEyebrow {
           color: #d8af45;
-          font-size: 11px;
+          font-size: 10px;
           letter-spacing: .32em;
           text-transform: uppercase;
-          position: relative;
-          z-index: 2;
         }
 
         .yuviTitle {
-          position: relative;
-          z-index: 2;
           margin: 18px 0;
           color: #f4db8b;
           font-family: "Cormorant Garamond", Georgia, serif;
-          font-size: clamp(34px, 9vw, 62px);
+          font-size: clamp(36px, 9vw, 64px);
           font-weight: 400;
           line-height: 1.02;
         }
 
         .yuviText {
-          position: relative;
-          z-index: 2;
-          max-width: 500px;
-          color: #bdb5a1;
+          max-width: 480px;
+          margin: 0 auto;
+          color: #c5bda9;
           font-size: 13px;
-          line-height: 1.8;
+          line-height: 1.85;
         }
 
         .yuviGoldLine {
-          width: 80px;
+          width: 85px;
           height: 1px;
+          margin: 18px auto;
           background: linear-gradient(
             90deg,
             transparent,
             #d8af45,
             transparent
           );
-          margin: 18px auto;
-          position: relative;
-          z-index: 2;
         }
 
-        .yuviName {
+        .yuviNames {
           color: #f4db8b;
           font-family: "Cormorant Garamond", Georgia, serif;
-          font-size: clamp(30px, 8vw, 48px);
+          font-size: clamp(34px, 8vw, 50px);
           line-height: 1;
         }
 
@@ -561,44 +533,45 @@ function Invitation({
           margin: 12px 0;
         }
 
-        .yuviCard {
-          position: relative;
-          z-index: 2;
-          width: min(88vw, 430px);
-          padding: 16px;
-          border: 1px solid rgba(216,175,69,.45);
-          background: rgba(255,255,255,.025);
-          box-shadow: 0 25px 80px rgba(0,0,0,.5);
-          backdrop-filter: blur(5px);
+        .yuviPortrait {
+          width: 128px;
+          height: 158px;
+          object-fit: cover;
+          border-radius: 75px 75px 20px 20px;
+          border: 1px solid rgba(244,219,139,.55);
+          box-shadow: 0 20px 55px rgba(0,0,0,.5);
         }
 
-        .yuviCard img {
-          width: 100%;
-          max-height: 62vh;
-          object-fit: contain;
-          display: block;
+        .yuviCouple {
+          width: min(82vw, 360px);
+          max-height: 48vh;
+          object-fit: cover;
+          border-radius: 180px 180px 25px 25px;
+          border: 1px solid rgba(244,219,139,.55);
+          box-shadow:
+            0 0 0 8px rgba(214,177,72,.04),
+            0 30px 80px rgba(0,0,0,.6);
+          animation: yuviZoom 8s ease-in-out infinite;
         }
 
-        .yuviInfoBox {
-          position: relative;
-          z-index: 2;
-          width: min(88vw, 430px);
-          padding: 28px 22px;
-          border: 1px solid rgba(216,175,69,.3);
+        .yuviInfo {
+          width: min(90vw, 430px);
+          padding: 25px 22px;
+          border: 1px solid rgba(216,175,69,.32);
           background: linear-gradient(
             145deg,
-            rgba(255,255,255,.045),
+            rgba(255,255,255,.055),
             rgba(255,255,255,.015)
           );
-          box-shadow: 0 25px 70px rgba(0,0,0,.35);
+          box-shadow: 0 25px 70px rgba(0,0,0,.4);
         }
 
-        .yuviInfoRow {
+        .yuviRow {
           padding: 15px 0;
-          border-bottom: 1px solid rgba(216,175,69,.15);
+          border-bottom: 1px solid rgba(216,175,69,.14);
         }
 
-        .yuviInfoRow:last-child {
+        .yuviRow:last-child {
           border-bottom: 0;
         }
 
@@ -617,42 +590,54 @@ function Invitation({
           font-size: 23px;
         }
 
-        .yuviMemory {
-          width: min(86vw, 390px);
-          height: min(58vh, 420px);
-          object-fit: cover;
-          border: 1px solid rgba(216,175,69,.4);
-          box-shadow: 0 25px 70px rgba(0,0,0,.5);
-          animation: memoryZoom 8s ease-in-out infinite;
+        .yuviCard {
+          width: min(88vw, 430px);
+          padding: 14px;
+          border: 1px solid rgba(216,175,69,.45);
+          background: rgba(255,255,255,.025);
+          box-shadow: 0 25px 80px rgba(0,0,0,.55);
         }
 
-        .yuviMemoryGrid {
-          position: relative;
-          z-index: 2;
+        .yuviCard img {
+          width: 100%;
+          max-height: 65vh;
+          object-fit: contain;
+          display: block;
+        }
+
+        .yuviGallery {
           width: min(90vw, 500px);
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 10px;
+          gap: 9px;
         }
 
-        .yuviMemoryGrid img {
+        .yuviGallery img {
           width: 100%;
-          height: 190px;
+          height: 185px;
           object-fit: cover;
-          border: 1px solid rgba(216,175,69,.3);
-          animation: memoryFade 7s ease-in-out infinite;
+          border: 1px solid rgba(216,175,69,.32);
+          animation: memoryZoom 7s ease-in-out infinite;
         }
 
         .yuviButton {
-          position: relative;
-          z-index: 2;
-          margin-top: 25px;
-          padding: 13px 25px;
+          display: inline-block;
+          margin-top: 22px;
+          padding: 13px 24px;
           border: 1px solid rgba(244,219,139,.5);
           background: rgba(216,175,69,.08);
           color: #f4db8b;
-          letter-spacing: .18em;
           font-size: 10px;
+          letter-spacing: .18em;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+
+        .yuviFooter {
+          margin-top: 28px;
+          color: #d8af45;
+          font-size: 10px;
+          letter-spacing: .22em;
           text-transform: uppercase;
         }
 
@@ -669,30 +654,19 @@ function Invitation({
 
         @keyframes yuviSweep {
           0% {
-            left: -45%;
+            left: -50%;
             opacity: 0;
           }
-          15% {
+          18% {
             opacity: .8;
           }
-          58% {
-            left: 110%;
-            opacity: .85;
+          60% {
+            left: 115%;
+            opacity: .8;
           }
           100% {
-            left: 110%;
+            left: 115%;
             opacity: 0;
-          }
-        }
-
-        @keyframes yuviFade {
-          from {
-            opacity: 0;
-            transform: translateY(18px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
           }
         }
 
@@ -708,30 +682,38 @@ function Invitation({
         @keyframes memoryZoom {
           0%,100% {
             transform: scale(1.03);
+            opacity: .88;
           }
           50% {
             transform: scale(1);
+            opacity: 1;
           }
         }
 
-        @keyframes memoryFade {
-          0%,100% {
-            opacity: .72;
+        @media (max-width: 480px) {
+          .yuviScene {
+            padding: 38px 18px;
           }
-          50% {
-            opacity: 1;
+
+          .yuviGallery img {
+            height: 160px;
+          }
+
+          .yuviPortrait {
+            width: 112px;
+            height: 142px;
           }
         }
       `}</style>
 
       <div className="yuviCinematic">
 
-        {/* SCENE 1 — GRAND OPENING */}
+        {/* 01 — GRAND OPENING */}
         <section className="yuviScene">
           <div className="yuviGlow" />
           <div className="yuviSweep" />
 
-          <div className="yuviFade" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="yuviContent">
             <div className="yuviEyebrow">
               A BEAUTIFUL BEGINNING
             </div>
@@ -740,10 +722,10 @@ function Invitation({
 
             <div
               style={{
-                color: '#f4db8b',
                 fontFamily: 'Cormorant Garamond, Georgia, serif',
-                fontSize: 14,
+                fontSize: 16,
                 letterSpacing: '.42em',
+                color: '#f4db8b',
                 marginLeft: '.42em',
               }}
             >
@@ -752,10 +734,10 @@ function Invitation({
 
             <div
               style={{
+                marginTop: 14,
                 color: '#9d957f',
                 fontSize: 9,
                 letterSpacing: '.3em',
-                marginTop: 12,
               }}
             >
               PRESENTS
@@ -763,10 +745,10 @@ function Invitation({
 
             <div
               style={{
-                marginTop: 35,
+                marginTop: 38,
                 color: '#d8af45',
                 fontFamily: 'Cormorant Garamond, Georgia, serif',
-                fontSize: 22,
+                fontSize: 25,
                 fontStyle: 'italic',
               }}
             >
@@ -775,365 +757,408 @@ function Invitation({
           </div>
         </section>
 
-        {/* SCENE 2 — COUPLE INTRODUCTION */}
+        {/* 02 — COUPLE */}
         <section className="yuviScene">
-          <div className="yuviEyebrow">
-            TOGETHER WITH THEIR FAMILIES
-          </div>
-
-          <div className="yuviGoldLine" />
-
-          <h2 className="yuviTitle">
-            Two Hearts,
-            <br />
-            One Beautiful Journey
-          </h2>
-
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 20,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 14,
-              flexWrap: 'wrap',
-            }}
-          >
-            {data.groomPhoto ? (
-              <img
-                src={data.groomPhoto}
-                alt={data.groom}
-                className="yuviSmallPhoto"
-              />
-            ) : (
-              <div
-                className="yuviSmallPhoto"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#8f8775',
-                  fontSize: 9,
-                }}
-              >
-                GROOM
-              </div>
-            )}
-
-            <div className="yuviAmp">&</div>
-
-            {data.bridePhoto ? (
-              <img
-                src={data.bridePhoto}
-                alt={data.bride}
-                className="yuviSmallPhoto"
-              />
-            ) : (
-              <div
-                className="yuviSmallPhoto"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#8f8775',
-                  fontSize: 9,
-                }}
-              >
-                BRIDE
-              </div>
-            )}
-          </div>
-
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 20,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 18,
-            }}
-          >
-            <span className="yuviName">{data.groom}</span>
-            <span className="yuviAmp">&</span>
-            <span className="yuviName">{data.bride}</span>
-          </div>
-        </section>
-
-        {/* SCENE 3 — BEAUTIFUL BEGINNING */}
-        <section className="yuviScene">
-          <div className="yuviEyebrow">
-            WITH LOVE & JOY
-          </div>
-
-          <div className="yuviGoldLine" />
-
-          <h2 className="yuviTitle">
-            A Beautiful
-            <br />
-            Beginning
-          </h2>
-
-          <p className="yuviText">
-            {data.message}
-          </p>
-
-          {data.couplePhoto && (
-            <img
-              src={data.couplePhoto}
-              alt="Couple"
-              className="yuviPhoto yuviZoom"
-              style={{ marginTop: 28 }}
-            />
-          )}
-        </section>
-
-        {/* SCENE 4 — RECEPTION MAIN EVENT */}
-        <section className="yuviScene">
-          <div className="yuviEyebrow">
-            YOU ARE CORDIALLY INVITED
-          </div>
-
-          <div className="yuviGoldLine" />
-
-          <h2 className="yuviTitle">
-            Reception
-          </h2>
-
-          <div className="yuviInfoBox">
+          <div className="yuviContent">
             <div className="yuviEyebrow">
-              CELEBRATION OF LOVE
-            </div>
-
-            <div
-              style={{
-                marginTop: 24,
-                color: '#f4db8b',
-                fontFamily: 'Cormorant Garamond, Georgia, serif',
-                fontSize: 39,
-              }}
-            >
-              {data.groom}
-            </div>
-
-            <div className="yuviAmp">&</div>
-
-            <div
-              style={{
-                color: '#f4db8b',
-                fontFamily: 'Cormorant Garamond, Georgia, serif',
-                fontSize: 39,
-              }}
-            >
-              {data.bride}
-            </div>
-
-            <div className="yuviGoldLine" />
-
-            <div className="yuviValue">
-              {data.reception || 'Reception'}
-            </div>
-
-            <p className="yuviText" style={{ margin: '20px auto 0' }}>
-              We warmly invite you to join us
-              <br />
-              and celebrate this beautiful evening.
-            </p>
-          </div>
-        </section>
-
-        {/* SCENE 5 — WEDDING CEREMONY */}
-        <section className="yuviScene">
-          <div className="yuviEyebrow">
-            THE WEDDING CEREMONY
-          </div>
-
-          <div className="yuviGoldLine" />
-
-          <h2 className="yuviTitle">
-            The Sacred
-            <br />
-            Beginning
-          </h2>
-
-          <div className="yuviInfoBox">
-            <div className="yuviInfoRow">
-              <span className="yuviLabel">Date</span>
-              <span className="yuviValue">{data.date}</span>
-            </div>
-
-            <div className="yuviInfoRow">
-              <span className="yuviLabel">Time</span>
-              <span className="yuviValue">{data.time}</span>
-            </div>
-
-            <div className="yuviInfoRow">
-              <span className="yuviLabel">Venue</span>
-              <span className="yuviValue">{data.venue}</span>
-            </div>
-          </div>
-
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.venue)}`}
-            target="_blank"
-            rel="noreferrer"
-            className="yuviButton"
-            style={{ textDecoration: 'none' }}
-          >
-            VIEW LOCATION
-          </a>
-        </section>
-
-        {/* SCENE 6 — INVITATION CARD */}
-        {data.card && (
-          <section className="yuviScene">
-            <div className="yuviEyebrow">
-              THE INVITATION
+              TOGETHER WITH THEIR FAMILIES
             </div>
 
             <div className="yuviGoldLine" />
 
             <h2 className="yuviTitle">
-              With Love,
+              Two Hearts,
               <br />
-              We Invite You
+              One Beautiful Journey
             </h2>
 
-            <div className="yuviCard yuviFade">
-              <img
-                src={data.card}
-                alt="Wedding invitation card"
-              />
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 15,
+                marginTop: 22,
+              }}
+            >
+              {data.groomPhoto ? (
+                <img
+                  src={data.groomPhoto}
+                  alt={data.groom}
+                  className="yuviPortrait"
+                />
+              ) : (
+                <div
+                  className="yuviPortrait"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#8f8775',
+                    fontSize: 9,
+                  }}
+                >
+                  GROOM
+                </div>
+              )}
+
+              <span className="yuviAmp">&</span>
+
+              {data.bridePhoto ? (
+                <img
+                  src={data.bridePhoto}
+                  alt={data.bride}
+                  className="yuviPortrait"
+                />
+              ) : (
+                <div
+                  className="yuviPortrait"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#8f8775',
+                    fontSize: 9,
+                  }}
+                >
+                  BRIDE
+                </div>
+              )}
             </div>
 
             <div
               style={{
-                position: 'relative',
-                zIndex: 2,
-                marginTop: 20,
-                color: '#d8af45',
-                fontFamily: 'Cormorant Garamond, Georgia, serif',
-                fontSize: 18,
-                fontStyle: 'italic',
+                marginTop: 22,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 14,
+                flexWrap: 'wrap',
               }}
             >
-              A day to remember,
+              <span className="yuviNames">{data.groom}</span>
+              <span className="yuviAmp">&</span>
+              <span className="yuviNames">{data.bride}</span>
+            </div>
+          </div>
+        </section>
+
+        {/* 03 — BEAUTIFUL BEGINNING */}
+        <section className="yuviScene">
+          <div className="yuviContent">
+            <div className="yuviEyebrow">
+              WITH LOVE & JOY
+            </div>
+
+            <div className="yuviGoldLine" />
+
+            <h2 className="yuviTitle">
+              A Beautiful
               <br />
-              a moment to cherish.
+              Beginning
+            </h2>
+
+            <p className="yuviText">
+              {data.message}
+            </p>
+
+            {data.couplePhoto && (
+              <img
+                src={data.couplePhoto}
+                alt="Couple"
+                className="yuviCouple"
+                style={{ marginTop: 28 }}
+              />
+            )}
+          </div>
+        </section>
+
+        {/* 04 — RECEPTION */}
+        <section className="yuviScene">
+          <div className="yuviContent">
+            <div className="yuviEyebrow">
+              YOU ARE CORDIALLY INVITED
+            </div>
+
+            <div className="yuviGoldLine" />
+
+            <h2 className="yuviTitle">
+              Reception
+            </h2>
+
+            <div className="yuviInfo">
+              <div className="yuviEyebrow">
+                CELEBRATION OF LOVE
+              </div>
+
+              <div className="yuviNames" style={{ marginTop: 25 }}>
+                {data.groom}
+              </div>
+
+              <div className="yuviAmp">&</div>
+
+              <div className="yuviNames">
+                {data.bride}
+              </div>
+
+              <div className="yuviGoldLine" />
+
+              <div className="yuviValue">
+                {data.reception || 'Reception'}
+              </div>
+
+              <p
+                className="yuviText"
+                style={{ marginTop: 18 }}
+              >
+                We warmly invite you to join us
+                <br />
+                and celebrate this beautiful evening.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 05 — WEDDING */}
+        <section className="yuviScene">
+          <div className="yuviContent">
+            <div className="yuviEyebrow">
+              THE WEDDING CEREMONY
+            </div>
+
+            <div className="yuviGoldLine" />
+
+            <div
+              style={{
+                fontSize: 9,
+                letterSpacing: '3px',
+                color: '#f4db8b',
+                opacity: .75,
+              }}
+            >
+              A DAY TO REMEMBER
+            </div>
+
+            <h2 className="yuviTitle">
+              The Sacred
+              <br />
+              Beginning
+            </h2>
+
+            <div
+              style={{
+                fontFamily: 'Cormorant Garamond, Georgia, serif',
+                fontSize: 21,
+                color: '#f4db8b',
+                letterSpacing: '2px',
+                marginBottom: 20,
+              }}
+            >
+              {data.bride} & {data.groom}
+            </div>
+
+            <div className="yuviInfo">
+              <div className="yuviRow">
+                <span className="yuviLabel">Date</span>
+                <span className="yuviValue">
+                  {data.date}
+                </span>
+              </div>
+
+              <div className="yuviRow">
+                <span className="yuviLabel">Time</span>
+                <span className="yuviValue">
+                  {data.time}
+                </span>
+              </div>
+
+              <div className="yuviRow">
+                <span className="yuviLabel">Venue</span>
+                <span className="yuviValue">
+                  {data.venue}
+                </span>
+              </div>
+            </div>
+
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                data.venue
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+              className="yuviButton"
+            >
+              VIEW LOCATION
+            </a>
+          </div>
+        </section>
+
+        {/* 06 — INVITATION CARD */}
+        {data.card && (
+          <section className="yuviScene">
+            <div className="yuviContent">
+              <div className="yuviEyebrow">
+                THE INVITATION
+              </div>
+
+              <div className="yuviGoldLine" />
+
+              <h2 className="yuviTitle">
+                With Love,
+                <br />
+                We Invite You
+              </h2>
+
+              <div className="yuviCard">
+                <img
+                  src={data.card}
+                  alt="Wedding invitation card"
+                />
+              </div>
+
+              <div
+                style={{
+                  marginTop: 20,
+                  color: '#d8af45',
+                  fontFamily: 'Cormorant Garamond, Georgia, serif',
+                  fontSize: 18,
+                  fontStyle: 'italic',
+                }}
+              >
+                A day to remember,
+                <br />
+                a moment to cherish.
+              </div>
             </div>
           </section>
         )}
 
-        {/* SCENE 7 — MEMORIES */}
+        {/* 07 — MEMORIES */}
         <section className="yuviScene">
-          <div className="yuviEyebrow">
-            OUR MEMORIES
-          </div>
-
-          <div className="yuviGoldLine" />
-
-          <h2 className="yuviTitle">
-            Moments
-            <br />
-            We Treasure
-          </h2>
-
-          {data.gallery.length > 0 ? (
-            <div className="yuviMemoryGrid">
-              {data.gallery.slice(0, 12).map((src, index) => (
-                <img
-                  key={index}
-                  src={src}
-                  alt={`Memory ${index + 1}`}
-                  style={{
-                    animationDelay: `${index * .35}s`,
-                  }}
-                />
-              ))}
+          <div className="yuviContent">
+            <div className="yuviEyebrow">
+              OUR MEMORIES
             </div>
-          ) : data.couplePhoto ? (
-            <img
-              src={data.couplePhoto}
-              alt="Couple memory"
-              className="yuviMemory"
-            />
-          ) : (
-            <p className="yuviText">
-              Your beautiful memories
+
+            <div className="yuviGoldLine" />
+
+            <h2 className="yuviTitle">
+              Moments
               <br />
-              will appear here.
-            </p>
-          )}
+              We Treasure
+            </h2>
+
+            {data.gallery.length > 0 ? (
+              <div className="yuviGallery">
+                {data.gallery.slice(0, 12).map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`Memory ${index + 1}`}
+                    style={{
+                      animationDelay: `${index * .25}s`,
+                    }}
+                  />
+                ))}
+              </div>
+            ) : data.couplePhoto ? (
+              <img
+                src={data.couplePhoto}
+                alt="Couple memory"
+                className="yuviCouple"
+              />
+            ) : (
+              <p className="yuviText">
+                Your beautiful memories
+                <br />
+                will appear here.
+              </p>
+            )}
+          </div>
         </section>
 
-        {/* SCENE 8 — SAVE THE DATE */}
+        {/* 08 — FINAL SAVE THE DATE */}
         <section className="yuviScene">
           <div className="yuviGlow" />
 
-          <div className="yuviEyebrow">
-            SAVE THE DATE
-          </div>
+          <div className="yuviContent">
+            <div className="yuviEyebrow">
+              SAVE THE DATE
+            </div>
 
-          <div className="yuviGoldLine" />
+            <div className="yuviGoldLine" />
 
-          <h2 className="yuviTitle">
-            Forever
-            <br />
-            Begins Here
-          </h2>
+            <h2 className="yuviTitle">
+              Forever
+              <br />
+              Begins Here
+            </h2>
 
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 20,
-            }}
-          >
-            <div className="yuviName">
+            <div className="yuviNames">
+              {data.bride}
+            </div>
+
+            <div
+              style={{
+                margin: '12px 0',
+                color: '#d8af45',
+                fontFamily: 'Cormorant Garamond, Georgia, serif',
+                fontSize: 25,
+                fontStyle: 'italic',
+              }}
+            >
+              &
+            </div>
+
+            <div className="yuviNames">
               {data.groom}
             </div>
 
-            <div className="yuviAmp">&</div>
-
-            <div className="yuviName">
-              {data.bride}
+            <div
+              style={{
+                marginTop: 25,
+                color: '#f4db8b',
+                fontFamily: 'Cormorant Garamond, Georgia, serif',
+                fontSize: 25,
+              }}
+            >
+              {data.date}
             </div>
-          </div>
 
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 30,
-              color: '#f7e5a5',
-              fontFamily: 'Cormorant Garamond, Georgia, serif',
-              fontSize: 24,
-            }}
-          >
-            {data.date}
-          </div>
+            <div
+              style={{
+                marginTop: 10,
+                color: '#d8c9a0',
+                fontSize: 13,
+              }}
+            >
+              {data.time}
+            </div>
 
-          <p className="yuviText" style={{ marginTop: 22 }}>
-            We can't wait to celebrate
-            <br />
-            this beautiful beginning with you.
-          </p>
+            <div
+              style={{
+                marginTop: 8,
+                color: '#d8c9a0',
+                fontSize: 13,
+              }}
+            >
+              {data.venue}
+            </div>
 
-          <div className="yuviGoldLine" />
+            <div className="yuviGoldLine" />
 
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              marginTop: 20,
-              color: '#d8af45',
-              fontSize: 10,
-              letterSpacing: '.3em',
-            }}
-          >
-            YUVI STUDIO
+            <p className="yuviText">
+              {data.family}
+              <br />
+              <br />
+              We can't wait to celebrate
+              <br />
+              this beautiful beginning with you.
+            </p>
+
+            <div className="yuviFooter">
+              Crafted with Love • YUVI STUDIO
+            </div>
           </div>
         </section>
 
