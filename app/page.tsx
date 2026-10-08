@@ -1242,6 +1242,19 @@ function Invitation({
     opacity: 0.9,
   }}
 >
+  <span
+  style={{
+    display: 'block',
+    fontSize: 9,
+    letterSpacing: '3px',
+    color: '#f4db8b',
+    opacity: 0.75,
+    marginTop: 14,
+    marginBottom: 5,
+  }}
+>
+  RECEPTION
+</span>              
   {data.reception}
 </span>
           </p>
