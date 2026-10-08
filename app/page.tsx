@@ -1163,6 +1163,18 @@ function Invitation({
           </div>
 
           <p className="yuviText" style={{ marginTop: 22 }}>
+<span
+  style={{
+    fontFamily: 'Cormorant Garamond, Georgia, serif',
+    fontSize: 28,
+    color: '#f4db8b',
+    letterSpacing: '2px',
+    marginTop: 18,
+    display: 'block',
+  }}
+>
+  {data.bride} &amp; {data.groom}
+</span>
             We can't wait to celebrate
             <br />
             this beautiful beginning with you.
