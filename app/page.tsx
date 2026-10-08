@@ -998,6 +998,17 @@ function Invitation({
             Beginning
           </h2>
 
+          <div
+  style={{
+    marginTop: 12,
+    fontFamily: 'Cormorant Garamond, Georgia, serif',
+    fontSize: 20,
+    color: '#f4db8b',
+    letterSpacing: '2px',
+  }}
+>
+  {data.bride} &amp; {data.groom}
+</div>
           <div className="yuviInfoBox">
             <div className="yuviInfoRow">
               <span className="yuviLabel">Date</span>
