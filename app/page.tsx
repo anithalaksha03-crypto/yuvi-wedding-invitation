@@ -1205,6 +1205,18 @@ function Invitation({
 >
   {data.bride} &amp; {data.groom}
 </span>
+              <span
+  style={{
+    display: 'block',
+    marginTop: 10,
+    fontSize: 12,
+    letterSpacing: '1.5px',
+    color: '#d8c9a0',
+    opacity: 0.85,
+  }}
+>
+  {data.family}
+</span>
             We can't wait to celebrate
             <br />
             this beautiful beginning with you.
