@@ -320,28 +320,7 @@ export default function Home() {
       {open && (
         <div className="modal">
           <div className="modalTop">
-            <button
-              type="button"
-              className="close"
-              onClick={() => setOpen(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-
-            <button
-              type="button"
-              className="music"
-              onClick={() => setMusicOn((value) => !value)}
-            >
-              {d.music
-                ? musicOn
-                  ? '🔊 Music On'
-                  : '🔇 Music Off'
-                : '♫ Add Music'}
-            </button>
-
-            <Invitation
+              <Invitation
               data={d}
               themeClass={d.theme}
               full
