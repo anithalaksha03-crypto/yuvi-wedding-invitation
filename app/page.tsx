@@ -1193,6 +1193,18 @@ function Invitation({
   }}
 />     
             <p className="yuviText" style={{ marginTop: 22 }}>
+     <span
+  style={{
+    display: 'block',
+    fontSize: 10,
+    letterSpacing: '4px',
+    color: '#f4db8b',
+    opacity: 0.8,
+    marginBottom: 8,
+  }}
+>
+  WEDDING INVITATION
+</span>         
 <span
   style={{
     fontFamily: 'Cormorant Garamond, Georgia, serif',
