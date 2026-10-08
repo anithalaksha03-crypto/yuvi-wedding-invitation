@@ -343,26 +343,7 @@ export default function Home() {
         </div>
       )}
     border: '1px solid rgba(244,219,139,.6)',
-    background: 'rgba(3,19,16,.9)',
-    color: '#f4db8b',
-    fontSize: 18,
-    cursor: 'pointer',
-    boxShadow: '0 8px 30px rgba(0,0,0,.5)',
-  }}
-  aria-label={musicOn ? 'Turn music off' : 'Turn music on'}
->
-  {d.music ? (musicOn ? '🔊' : '🔇') : '♫'}
-</button>
-           
-            <Invitation
-              data={d}
-              themeClass={d.theme}
-              full
-            />
-          </div>
-        </div>
-      )}
-    </main>
+    
   );
 }
 
