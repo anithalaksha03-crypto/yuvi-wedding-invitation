@@ -1220,6 +1220,18 @@ function Invitation({
             We can't wait to celebrate
             <br />
             this beautiful beginning with you.
+              <span
+  style={{
+    display: 'block',
+    marginTop: 12,
+    fontSize: 12,
+    letterSpacing: '1.2px',
+    color: '#d8c9a0',
+    opacity: 0.9,
+  }}
+>
+  {data.reception}
+</span>
           </p>
 
           <div className="yuviGoldLine" />
