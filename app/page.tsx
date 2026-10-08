@@ -1161,7 +1161,17 @@ function Invitation({
           >
             {data.date}
           </div>
-
+<div
+  style={{
+    marginTop: 10,
+    fontSize: 13,
+    letterSpacing: '1px',
+    color: '#d8c9a0',
+    opacity: 0.9,
+  }}
+>
+  {data.venue}
+</div>
           <p className="yuviText" style={{ marginTop: 22 }}>
 <span
   style={{
