@@ -299,7 +299,25 @@ export default function Home() {
             >
               Full screen
             </button>
-              {open && (
+          </div>
+
+          <Invitation
+            data={d}
+            themeClass={d.theme}
+          />
+        </section>
+      </div>
+
+      {d.music && (
+        <audio
+          ref={audioRef}
+          src={d.music}
+          loop
+          preload="auto"
+        />
+      )}
+
+      {open && (
         <div className="modal">
           <div className="modalTop">
             <button
@@ -313,25 +331,14 @@ export default function Home() {
 
             <button
               type="button"
+              className="music"
               onClick={() => setMusicOn((value) => !value)}
-              style={{
-                position: 'fixed',
-                right: 18,
-                bottom: 18,
-                zIndex: 9999,
-                width: 50,
-                height: 50,
-                borderRadius: '50%',
-                border: '1px solid rgba(244,219,139,.6)',
-                background: 'rgba(3,19,16,.9)',
-                color: '#f4db8b',
-                fontSize: 18,
-                cursor: 'pointer',
-                boxShadow: '0 8px 30px rgba(0,0,0,.5)',
-              }}
-              aria-label={musicOn ? 'Turn music off' : 'Turn music on'}
             >
-              {d.music ? (musicOn ? '🔊' : '🔇') : '♫'}
+              {d.music
+                ? musicOn
+                  ? '🔊 Music On'
+                  : '🔇 Music Off'
+                : '♫ Add Music'}
             </button>
 
             <Invitation
@@ -342,8 +349,7 @@ export default function Home() {
           </div>
         </div>
       )}
-    border: '1px solid rgba(244,219,139,.6)',
-    
+    </main>
   );
 }
 
@@ -966,34 +972,13 @@ function Invitation({
           </div>
 
           <div className="yuviGoldLine" />
-<div
-  style={{
-    fontSize: 9,
-    letterSpacing: '3px',
-    color: '#f4db8b',
-    opacity: 0.75,
-    marginBottom: 8,
-  }}
->
-  A DAY TO REMEMBER
-</div>
+
           <h2 className="yuviTitle">
             The Sacred
             <br />
             Beginning
           </h2>
 
-          <div
-  style={{
-    marginTop: 12,
-    fontFamily: 'Cormorant Garamond, Georgia, serif',
-    fontSize: 20,
-    color: '#f4db8b',
-    letterSpacing: '2px',
-  }}
->
-  {data.bride} &amp; {data.groom}
-</div>
           <div className="yuviInfoBox">
             <div className="yuviInfoRow">
               <span className="yuviLabel">Date</span>
@@ -1114,23 +1099,11 @@ function Invitation({
 
           <div className="yuviGoldLine" />
 
-         <h2 className="yuviTitle">
-  Forever
-  <br />
-  Begins Here
-  <span
-    style={{
-      display: 'block',
-      fontSize: 12,
-      letterSpacing: '3px',
-      marginTop: 14,
-      color: '#f4db8b',
-      opacity: 0.85,
-    }}
-  >
-    SAVE THE DATE
-  </span>
-</h2>
+          <h2 className="yuviTitle">
+            Forever
+            <br />
+            Begins Here
+          </h2>
 
           <div
             style={{
@@ -1143,18 +1116,13 @@ function Invitation({
               {data.groom}
             </div>
 
-           <div
-  style={{
-    marginTop: 18,
-    fontFamily: 'Cormorant Garamond, Georgia, serif',
-    fontSize: 26,
-    letterSpacing: '2px',
-    color: '#f4db8b',
-    fontWeight: 600,
-  }}
->
-  {data.date}
-</div>
+            <div className="yuviAmp">&</div>
+
+            <div className="yuviName">
+              {data.bride}
+            </div>
+          </div>
+
           <div
             style={{
               position: 'relative',
@@ -1167,139 +1135,27 @@ function Invitation({
           >
             {data.date}
           </div>
-<div
-  style={{
-    marginTop: 10,
-    fontSize: 13,
-    letterSpacing: '1px',
-    color: '#d8c9a0',
-    opacity: 0.9,
-  }}
->
-  {data.venue}
-</div>
-    <div
-  style={{
-    marginTop: 6,
-    fontSize: 12,
-    letterSpacing: '1px',
-    color: '#d8c9a0',
-    opacity: 0.85,
-  }}
->
-  {data.time}
-</div>        
-     <div
-  style={{
-    width: 55,
-    height: 1,
-    background: '#f4db8b',
-    margin: '14px auto 0',
-    opacity: 0.7,
-  }}
-/>     
-            <p className="yuviText" style={{ marginTop: 22 }}>
-     <span
-  style={{
-    display: 'block',
-    fontSize: 10,
-    letterSpacing: '4px',
-    color: '#f4db8b',
-    opacity: 0.8,
-    marginBottom: 8,
-  }}
->
-  WEDDING INVITATION
-</span>         
-<span
-  style={{
-    fontFamily: 'Cormorant Garamond, Georgia, serif',
-    fontSize: 28,
-    color: '#f4db8b',
-    letterSpacing: '2px',
-    marginTop: 18,
-    display: 'block',
-  }}
->
-  {data.bride} &amp; {data.groom}
-</span>
-              <span
-  style={{
-    display: 'block',
-    marginTop: 10,
-    fontSize: 12,
-    letterSpacing: '1.5px',
-    color: '#d8c9a0',
-    opacity: 0.85,
-  }}
->
-  {data.family}
-</span>
+
+          <p className="yuviText" style={{ marginTop: 22 }}>
             We can't wait to celebrate
             <br />
             this beautiful beginning with you.
-              <span
-  style={{
-    display: 'block',
-    marginTop: 12,
-    fontSize: 12,
-    letterSpacing: '1.2px',
-    color: '#d8c9a0',
-    opacity: 0.9,
-  }}
->
-  <span
-  style={{
-    display: 'block',
-    fontSize: 9,
-    letterSpacing: '3px',
-    color: '#f4db8b',
-    opacity: 0.75,
-    marginTop: 14,
-    marginBottom: 5,
-  }}
->
-  RECEPTION
-</span>              
-  {data.reception}
-</span>
           </p>
 
           <div className="yuviGoldLine" />
 
-         <div
-  style={{
-    textAlign: 'center',
-    padding: '25px 20px 10px',
-    color: '#f4db8b',
-    letterSpacing: '1.5px',
-  }}
->
-  <div style={{ fontSize: 12, opacity: 0.8 }}>
-    ✨ Crafted with Love by
-  </div>
-
-  <div
-    style={{
-      fontSize: 22,
-      fontWeight: 700,
-      marginTop: 8,
-      letterSpacing: '3px',
-    }}
-  >
-    YUVI STUDIO
-  </div>
-
-  <div
-    style={{
-      fontSize: 10,
-      opacity: 0.65,
-      marginTop: 6,
-    }}
-  >
-    Wedding • Baby • Events
-  </div>
-</div>
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              marginTop: 20,
+              color: '#d8af45',
+              fontSize: 10,
+              letterSpacing: '.3em',
+            }}
+          >
+            YUVI STUDIO
+          </div>
         </section>
 
       </div>
