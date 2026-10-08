@@ -1183,7 +1183,16 @@ function Invitation({
 >
   {data.time}
 </div>        
-          <p className="yuviText" style={{ marginTop: 22 }}>
+     <div
+  style={{
+    width: 55,
+    height: 1,
+    background: '#f4db8b',
+    margin: '14px auto 0',
+    opacity: 0.7,
+  }}
+/>     
+            <p className="yuviText" style={{ marginTop: 22 }}>
 <span
   style={{
     fontFamily: 'Cormorant Garamond, Georgia, serif',
