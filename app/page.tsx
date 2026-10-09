@@ -293,20 +293,19 @@ export default function Home() {
               <p className="note">9:16 • Premium cinematic style</p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-            >
-              Full screen
-            </button>
-          </div>
+                      <button
+            type="button"
+            onClick={() => setOpen(true)}
+          >
+            Full Screen
+          </button>
+        </div>
 
-          <Invitation
-            data={d}
-            themeClass={d.theme}
-          />
-        </section>
-      </div>
+        <Invitation
+          data={d}
+          themeClass={d.theme}
+        />
+      </section>
 
       {d.music && (
         <audio
@@ -318,9 +317,124 @@ export default function Home() {
       )}
 
       {open && (
-        <div className="modal">
-          <div className="modalTop">
-              <Invitation
+        <div
+          className="modal"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 9998,
+            background: '#020b09',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'hidden',
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => {
+              setMusicOn(false);
+              setOpen(false);
+            }}
+            aria-label="Close invitation"
+            style={{
+              position: 'fixed',
+              top: 16,
+              left: 16,
+              zIndex: 10002,
+              width: 46,
+              height: 46,
+              borderRadius: '50%',
+              border: '1px solid #f4db8b',
+              background: '#06201b',
+              color: '#f4db8b',
+              fontSize: 27,
+              cursor: 'pointer',
+            }}
+          >
+            ×
+          </button>
+
+          <div
+            style={{
+              position: 'fixed',
+              top: 16,
+              right: 16,
+              zIndex: 10002,
+              display: 'flex',
+              gap: 8,
+            }}
+          >
+            <label
+              title="Add or change music"
+              style={{
+                width: 46,
+                height: 46,
+                borderRadius: '50%',
+                border: '1px solid #f4db8b',
+                background: '#06201b',
+                color: '#f4db8b',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 21,
+                cursor: 'pointer',
+              }}
+            >
+              🎵
+              <input
+                type="file"
+                accept="audio/*"
+                style={{ display: 'none' }}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (!file) return;
+
+                  const reader = new FileReader();
+                  reader.onload = () => {
+                    setD((old) => ({
+                      ...old,
+                      music: String(reader.result),
+                      musicName: file.name,
+                    }));
+                    setMusicOn(true);
+                  };
+                  reader.readAsDataURL(file);
+                  e.currentTarget.value = '';
+                }}
+              />
+            </label>
+
+            <button
+              type="button"
+              disabled={!d.music}
+              onClick={() => setMusicOn((value) => !value)}
+              title={musicOn ? 'Turn music off' : 'Turn music on'}
+              style={{
+                width: 46,
+                height: 46,
+                borderRadius: '50%',
+                border: '1px solid #f4db8b',
+                background: '#06201b',
+                color: '#f4db8b',
+                fontSize: 19,
+                cursor: d.music ? 'pointer' : 'not-allowed',
+              }}
+            >
+              {musicOn ? '🔊' : '🔇'}
+            </button>
+          </div>
+
+          <div
+            style={{
+              width: 'min(430px, 100vw)',
+              height: '100%',
+              overflowY: 'auto',
+              overflowX: 'hidden',
+              margin: '0 auto',
+            }}
+          >
+            <Invitation
               data={d}
               themeClass={d.theme}
               full
