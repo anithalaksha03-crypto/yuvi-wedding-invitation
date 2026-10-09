@@ -76,7 +76,7 @@ export default function Home() {
     });
   };
 
-  const addGallery = (files: FileList | null) => {
+    const addGallery = (files: FileList | null) => {
     if (!files) return;
 
     const selected = Array.from(files).slice(0, 12);
