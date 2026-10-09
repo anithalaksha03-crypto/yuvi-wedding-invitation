@@ -307,6 +307,7 @@ export default function Home() {
           themeClass={d.theme}
         />
       </section>
+              </div>
 
            {d.music && (
         <audio
