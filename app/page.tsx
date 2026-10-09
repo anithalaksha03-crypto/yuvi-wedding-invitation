@@ -56,6 +56,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [musicOn, setMusicOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const musicPickerRef = useRef<HTMLInputElement | null>(null);
 
  const update = <K extends keyof InviteData,>(
     key: K,
@@ -307,7 +308,7 @@ export default function Home() {
         />
       </section>
 
-      {d.music && (
+           {d.music && (
         <audio
           ref={audioRef}
           src={d.music}
@@ -315,6 +316,28 @@ export default function Home() {
           preload="auto"
         />
       )}
+
+      <input
+        ref={musicPickerRef}
+        type="file"
+        accept="audio/*"
+        style={{ display: 'none' }}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (!file) return;
+
+          fileData(file, (value) => {
+            setD((old) => ({
+              ...old,
+              music: value,
+              musicName: file.name,
+            }));
+            setMusicOn(true);
+          });
+
+          e.currentTarget.value = '';
+        }}
+      />
 
       {open && (
         <div
@@ -355,91 +378,50 @@ export default function Home() {
             ×
           </button>
 
-          <div
+          <button
+            type="button"
+            onClick={() => {
+              if (!d.music) {
+                musicPickerRef.current?.click();
+              } else {
+                setMusicOn((value) => !value);
+              }
+            }}
+            aria-label={
+              d.music
+                ? musicOn
+                  ? 'Turn music off'
+                  : 'Turn music on'
+                : 'Add music'
+            }
             style={{
               position: 'fixed',
-              top: 16,
               right: 16,
+              bottom: 20,
               zIndex: 10002,
-              display: 'flex',
-              gap: 8,
+              minWidth: 54,
+              height: 50,
+              padding: '0 14px',
+              borderRadius: 28,
+              border: '1px solid #f4db8b',
+              background: '#06201b',
+              color: '#f4db8b',
+              fontSize: 14,
+              cursor: 'pointer',
             }}
           >
-            <label
-              title="Add or change music"
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: '50%',
-                border: '1px solid #f4db8b',
-                background: '#06201b',
-                color: '#f4db8b',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: 21,
-                cursor: 'pointer',
-              }}
-            >
-              🎵
-              <input
-                type="file"
-                accept="audio/*"
-                style={{ display: 'none' }}
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (!file) return;
+            {!d.music
+              ? '♫ Add Music'
+              : musicOn
+                ? '🔊 Music On'
+                : '🔇 Music Off'}
+          </button>
 
-                  const reader = new FileReader();
-                  reader.onload = () => {
-                    setD((old) => ({
-                      ...old,
-                      music: String(reader.result),
-                      musicName: file.name,
-                    }));
-                    setMusicOn(true);
-                  };
-                  reader.readAsDataURL(file);
-                  e.currentTarget.value = '';
-                }}
-              />
-            </label>
-
-            <button
-              type="button"
-              disabled={!d.music}
-              onClick={() => setMusicOn((value) => !value)}
-              title={musicOn ? 'Turn music off' : 'Turn music on'}
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: '50%',
-                border: '1px solid #f4db8b',
-                background: '#06201b',
-                color: '#f4db8b',
-                fontSize: 19,
-                cursor: d.music ? 'pointer' : 'not-allowed',
-              }}
-            >
-              {musicOn ? '🔊' : '🔇'}
-            </button>
-          </div>
-
-          <div
-            style={{
-              width: 'min(430px, 100vw)',
-              height: '100%',
-              overflowY: 'auto',
-              overflowX: 'hidden',
-              margin: '0 auto',
-            }}
-          >
-            <Invitation
-              data={d}
-              themeClass={d.theme}
-              full
-            />
-          </div>
+          <Invitation
+            data={d}
+            themeClass={d.theme}
+            full
+          />
         </div>
       )}
     </main>
