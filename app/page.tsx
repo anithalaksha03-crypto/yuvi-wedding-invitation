@@ -504,6 +504,8 @@ function Invitation({
         .yuviCinematic {
           scroll-behavior: smooth;
           scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: auto;
           background:
             radial-gradient(circle at 50% 20%, rgba(214,177,72,.08), transparent 28%),
             #041713;
