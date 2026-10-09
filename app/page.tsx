@@ -57,7 +57,7 @@ export default function Home() {
   const [musicOn, setMusicOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const update = <K extends keyof InviteData,>(
+ const update = <K extends keyof InviteData,>(
     key: K,
     value: InviteData[K]
   ) => {
