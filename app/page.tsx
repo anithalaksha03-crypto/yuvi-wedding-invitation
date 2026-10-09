@@ -655,6 +655,9 @@ function Invitation({
 
         .yuviInfo {
           width: min(90vw, 430px);
+          box-sizing: border-box;
+          margin-left: auto;
+          margin-right: auto;
           padding: 25px 22px;
           border: 1px solid rgba(216,175,69,.32);
           background: linear-gradient(
