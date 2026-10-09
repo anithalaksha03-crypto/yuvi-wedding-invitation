@@ -1,27 +1,6 @@
 import React from "react";
 import { Composition } from "remotion";
-
-const WeddingVideo: React.FC = () => {
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#041713",
-        color: "#f4db8b",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: 48,
-        textAlign: "center",
-      }}
-    >
-      YUVI STUDIO
-      <br />
-      Wedding Invitation
-    </div>
-  );
-};
+import { WeddingVideo } from "./WeddingVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
